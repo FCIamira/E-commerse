@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login2</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+   <link rel="stylesheet" href="login2.css">
+   <style>
+    .error {
+        color: red;
+        font-size: 12px;
+        display: none; /* Hidden initially */
+    }
+    .valid {
+        border: 1px solid green;
+    }
+    .invalid {
+        border: 1px solid red;
+    }
+</style>
+</head>
+<body>
+ <div id="container">  
+<div id="image-login">
+    <img src="./asset/Gift Shopping.png" alt="">
+
+</div>
+<div id="form">
+   
+    <form id="myFormLogin">
+      <h2>Log In</h2>
+      <div style="padding: 10px;">
+          <input type="text" id="userNameLogin" name="userNameLogin"  class="inputValid" placeholder="Enter your email">
+          <p id="errorUserNameLogin" class="error">Please enter a valid email address</p>
+      </div>
+
+      <div style="padding: 10px;">
+          <input type="password" id="passwordLogin" name="passwordLogin"  class="inputValid" placeholder="Enter your password">
+          <p id="errorPasswordLogin" class="error">Password must be at least 8 characters, include a number, and a special character</p>
+      </div>
+
+      <button type="submit" id="submitBtn">Login</button>
+      <div style="padding: 20px;">
+        <span style="color: rgb(192, 181, 181);">Already have an account?</span>
+        <a href="login2.html" style="text-decoration: none;">Login</a>
+    </div>
+  </form>
+    <div>
+        <div class="social-container ">
+            
+  <p class="text-center">
+                you don't have an account? <a href="validitionRegister.html" class="mx-2"> Create account</a>
+              </p>
+              <div class="d-flex flex-column align-items-center">
+                <!-- <p class=" opacity-50 text-light"> - OR - </p> -->
+                <!-- <a href="#"> <button class="login_btn btn-bg-color btn btn-outline-info"><i class="fa-brands fa-google"
+                      style="color: #002F5F;"></i> Sign up with Google</button> </a> -->
+    </div>
+ 
+</div>
+</div> 
+<script src="login2.js"></script>
+</body>
+</html>
