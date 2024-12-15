@@ -1,3 +1,9 @@
+let getUser =JSON.parse(localStorage.getItem("OurProdect"));
+console.log(getUser);
+getUser.forEach((input) => {
+   console.log( input.userName);
+});
+
 var form = document.getElementById("myFormLogin");
 var inputs = document.querySelectorAll(".inputValid");
 var spans = [
@@ -60,11 +66,12 @@ form.addEventListener("submit", function (event) {
             showError(input, spans[index], "This field is required");
             formValid = false;
         } else {
-            if (input.name === "userNameLogin" && !validateEmail(value)) {
+            console.log(input.name)
+                if (input.name === "userNameLogin" && !validateEmail(value) ) {
                 showError(input, spans[0], "Please enter a valid email address");
                 formValid = false;
             } else if (input.name === "passwordLogin" && !validatePassword(value)) {
-                showError(input, spans[1], "Password must be at least 8 characters, including a number and a special character");
+                showError(input, spans[1], "Please enter a valid password");
                 formValid = false;
             } else {
                 hideError(input, spans[index]);
@@ -90,12 +97,16 @@ submitBtn.addEventListener("mouseout", function() {
     submitBtn.style.color = "";
 });
 
+
 function validateEmail(email) {
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    return emailRegex.test(email);
+    return getUser.some((input) => email === input.userName && emailRegex.test(email));
 }
 
 function validatePassword(password) {
     const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
-    return passwordRegex.test(password);
+    return getUser.some((input) => password === input.password && passwordRegex.test(password));
 }
+
+
+
